@@ -1,0 +1,10 @@
+---
+
+homebrew:
+  packages:
+    - git
+    - git-flow
+    - vim
+    - rbenv
+    - ruby-build
+    - zsh

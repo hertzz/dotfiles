@@ -1,0 +1,10 @@
+---
+
+homebrew:
+  install:
+    path: /usr/local
+  bin:
+    path: /usr/local/bin
+  git:
+    repository: git://github.com/Homebrew/homebrew.git
+    branch: master
