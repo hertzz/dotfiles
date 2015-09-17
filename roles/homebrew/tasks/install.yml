@@ -11,7 +11,7 @@
 
 - name: ensure homebrew bin permissions are set
   file:
-    path: "{{ homebrew.bin.path }}"
+    path: "{{ homebrew.install.path }}/bin"
     group: admin
     mode: 0775
     state: directory
@@ -26,5 +26,5 @@
     accept_hostkey: yes
 
 - name: register homebrew binary
-  stat: "path={{ homebrew.bin.path }}/brew"
+  stat: "path={{ homebrew.install.path }}/bin/brew"
   register: homebrew_binary
