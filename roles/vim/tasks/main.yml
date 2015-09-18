@@ -1,0 +1,5 @@
+---
+
+- include: install.yml
+- include: themes.yml
+- include: config.yml
