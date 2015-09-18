@@ -1,0 +1,11 @@
+---
+
+- include_vars: config.yml
+
+- name: ensure git configuration is setup
+  template:
+    src: config/gitconfig.j2
+    dest: ~/.gitconfig
+    owner: "{{ ansible_user_id }}"
+    group: "staff"
+    mode: 0644
