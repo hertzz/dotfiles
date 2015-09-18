@@ -1,0 +1,6 @@
+---
+
+homebrew:
+  upgrade:
+    self: yes
+    packages: yes

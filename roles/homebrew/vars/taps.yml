@@ -1,0 +1,5 @@
+---
+
+homebrew:
+  taps:
+    - caskroom/cask

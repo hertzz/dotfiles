@@ -2,3 +2,5 @@
 
 - include: install.yml
 - include: packages.yml
+- include: taps.yml
+- include: upgrade.yml

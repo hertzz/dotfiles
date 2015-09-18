@@ -1,0 +1,6 @@
+---
+
+- include_vars: upgrade.yml
+
+- name: ensure packages are upgraded (if enabled)
+  homebrew: update_homebrew={{ homebrew.upgrade.self }} upgrade_all={{ homebrew.upgrade.packages }}
