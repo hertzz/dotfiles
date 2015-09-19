@@ -1,0 +1,16 @@
+---
+
+- include_vars: frameworks.yml
+
+- name: register oh-my-zsh presence
+  stat: "path={{ zsh.frameworks.ohmyzsh.dest }}"
+  register: ohmyzsh_path
+
+- name: ensure oh-my-zsh is installed
+  git:
+    repo: "{{ zsh.frameworks.ohmyzsh.repository }}"
+    version: "{{ zsh.frameworks.ohmyzsh.branch }}"
+    dest: "{{ zsh.frameworks.ohmyzsh.dest }}"
+    update: no
+    accept_hostkey: yes
+  when: ohmyzsh_path|failed
