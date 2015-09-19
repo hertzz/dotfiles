@@ -1,0 +1,6 @@
+---
+
+system:
+  user:
+    binaries:
+      path: "/usr/local/bin"

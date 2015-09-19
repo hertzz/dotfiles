@@ -1,0 +1,9 @@
+---
+
+atom:
+  install:
+    url: "https://atom.io/download/mac"
+    dest: /Applications
+  download:
+    dest: "~/Downloads"
+    filename: "atom.zip"

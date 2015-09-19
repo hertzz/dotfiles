@@ -4,7 +4,9 @@
   connection: local
   gather_facts: true
   roles:
-    - homebrew
-    - git
-    - vim
-    - zsh
+    #- common
+    #- homebrew
+    #- git
+    #- vim
+    #- zsh
+    - atom

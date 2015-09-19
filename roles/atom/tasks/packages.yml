@@ -1,0 +1,20 @@
+---
+
+- include_vars: packages.yml
+
+- name: register apm binary
+  stat: "path=apm"
+  register: apm_binary
+
+# this is still not working correctly
+- name: register package states
+  stat: "path=~/.atom/packages/{{ item }}"
+  register: "atom_package_{{ item | replace('-', '_') }}"
+  with_items: "{{ atom.packages }}"
+
+- debug: "msg={{ atom_package_atom_jinja2 }}"
+
+- name: install Atom packages
+  command: "apm install {{ item }}"
+  when: "atom_package_{{ item }}|failed"
+  with_items: "{{ atom.packages }}"
