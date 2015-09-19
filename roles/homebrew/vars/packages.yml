@@ -10,4 +10,5 @@ homebrew:
     - ruby-build
     - youtube-dl
     - ffmpeg
+    - wget
     - zsh
