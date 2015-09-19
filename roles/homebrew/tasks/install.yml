@@ -1,0 +1,47 @@
+---
+
+- include_vars: install.yml
+
+- name: ensure homebrew install path exists
+  file:
+    path: "{{ homebrew.install.path }}"
+    group: admin
+    mode: 0775
+    state: directory
+
+- name: ensure homebrew bin permissions are set
+  file:
+    path: "{{ homebrew.install.path }}/bin"
+    group: admin
+    mode: 0775
+    state: directory
+    recurse: true
+
+- name: register homebrew binary
+  stat: "path={{ homebrew.install.path }}/bin/brew"
+  register: homebrew_binary
+
+- name: ensure homebrew is installed
+  git:
+    repo: "{{ homebrew.git.repository }}"
+    version: "{{ homebrew.git.branch }}"
+    dest: "{{ homebrew.install.path }}"
+    update: no
+    accept_hostkey: yes
+  when: homebrew_binary|failed
+
+- name: ensure homebrew git history is removed
+  file:
+    path: "{{ homebrew.install.path }}/.git"
+    state: absent
+
+- name: ensure homebrew markdown files are removed
+  file:
+    path: "{{ item }}"
+    state: absent
+  with_fileglob:
+    - "{{ homebrew.install.path }}/*.md"
+
+- name: register homebrew binary
+  stat: "path={{ homebrew.install.path }}/bin/brew"
+  register: homebrew_binary

@@ -1,0 +1,17 @@
+---
+
+zsh:
+  frameworks:
+    ohmyzsh:
+      repository: git://github.com/robbyrussell/oh-my-zsh.git
+      branch: master
+      dest: ~/.oh-my-zsh
+      plugins:
+        - git
+        - git-flow
+        - github
+        - osx
+        - rails
+        - brew
+        - rbenv
+        - history

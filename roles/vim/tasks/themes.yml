@@ -1,0 +1,13 @@
+---
+
+- include_vars: config.yml
+
+- name: ensure vim color template is setup
+  copy:
+    src: "colors/{{ item }}.vim"
+    dest: "{{ vim.config.path }}/colors/{{ item }}.vim"
+    owner: "{{ ansible_user_id }}"
+    group: "staff"
+    mode: 0644
+  with_items:
+    - solarized

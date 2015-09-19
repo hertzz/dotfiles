@@ -1,0 +1,13 @@
+---
+
+homebrew:
+  packages:
+    - git
+    - git-flow
+    - vim
+    - gpg2
+    - rbenv
+    - ruby-build
+    - youtube-dl
+    - ffmpeg
+    - zsh

@@ -1,0 +1,11 @@
+---
+
+- include_vars: frameworks.yml
+
+- name: ensure zsh configuration is setup
+  template:
+    src: zshrc.j2
+    dest: ~/.zshrc
+    owner: "{{ ansible_user_id }}"
+    group: "staff"
+    mode: 0644

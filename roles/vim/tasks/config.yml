@@ -1,0 +1,11 @@
+---
+
+- include_vars: config.yml
+
+- name: ensure vim configuration is setup
+  template:
+    src: vimrc.j2
+    dest: ~/.vimrc
+    owner: "{{ ansible_user_id }}"
+    group: "staff"
+    mode: 0644
