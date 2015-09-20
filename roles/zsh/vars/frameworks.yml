@@ -15,3 +15,4 @@ zsh:
         - brew
         - rbenv
         - history
+      theme: "eastwood"
