@@ -13,5 +13,5 @@
 
 - name: install Atom packages
   command: "apm install {{ item.item }}"
-  when: item.stat.exists == False
+  when: apm_binary|success and item.stat.exists == False
   with_items: atom_package_stat.results
