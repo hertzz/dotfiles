@@ -1,0 +1,6 @@
+---
+
+atom:
+  packages:
+    - atom-jinja2
+    - minimap
