@@ -21,6 +21,11 @@ Run the playbook:
 $ ./bin/run [playbook]
 ```
 
+Run a specific role:
+```shell
+$ ./bin/run [playbook] [role]
+```
+
 If no first argument is specified, the `osx.yml` master playbook will be used.
 
 ### Contributors
