@@ -1,6 +1,8 @@
 ---
 
 - include_vars: config.yml
+  tags:
+    - vim
 
 - name: ensure vim color template is setup
   copy:
@@ -11,3 +13,5 @@
     mode: 0644
   with_items:
     - solarized
+  tags:
+    - vim

@@ -1,6 +1,8 @@
 ---
 
 - include_vars: config.yml
+  tags:
+    - git
 
 - name: ensure git configuration is setup
   template:
@@ -9,3 +11,5 @@
     owner: "{{ ansible_user_id }}"
     group: "staff"
     mode: 0644
+  tags:
+    - git

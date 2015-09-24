@@ -1,6 +1,17 @@
 ---
 
 - include: install.yml
+  tags:
+    - homebrew
+
 - include: packages.yml
+  tags:
+    - homebrew
+
 - include: taps.yml
+  tags:
+    - homebrew
+
 - include: upgrade.yml
+  tags:
+    - homebrew

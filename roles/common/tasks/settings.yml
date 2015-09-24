@@ -1,0 +1,5 @@
+---
+
+- include_vars: settings.yml
+  tags:
+    - common

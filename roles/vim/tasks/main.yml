@@ -1,5 +1,13 @@
 ---
 
 - include: install.yml
+  tags:
+    - vim
+
 - include: themes.yml
+  tags:
+    - vim
+
 - include: config.yml
+  tags:
+    - vim

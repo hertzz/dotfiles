@@ -1,6 +1,8 @@
 ---
 
 - include_vars: frameworks.yml
+  tags:
+    - zsh
 
 - name: ensure zsh configuration is setup
   template:
@@ -9,3 +11,5 @@
     owner: "{{ ansible_user_id }}"
     group: "staff"
     mode: 0644
+  tags:
+    - zsh
