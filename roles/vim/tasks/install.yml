@@ -1,6 +1,8 @@
 ---
 
 - include_vars: config.yml
+  tags:
+    - vim
 
 - name: ensure vim base directory exists
   file:
@@ -9,6 +11,8 @@
     group: "staff"
     mode: 0755
     state: directory
+  tags:
+    - vim
 
 - name: "ensure vim.d directories exist"
   file:
@@ -23,3 +27,5 @@
     - swaps
     - syntax
     - undo
+  tags:
+    - vim

@@ -1,10 +1,14 @@
 ---
 
 - include_vars: install.yml
+  tags:
+    - atom
 
 - name: register Atom binary
   stat: "path={{ system.user.binaries.path }}/atom"
   register: atom_binary
+  tags:
+    - atom
 
 - name: download Atom program zip file
   get_url:
@@ -12,6 +16,8 @@
     dest: "{{ atom.download.dest }}/{{ atom.download.filename }}"
     mode: 0644
   when: atom_binary|failed
+  tags:
+    - atom
 
 - name: unzip Atom zip file and install
   unarchive:
@@ -19,3 +25,5 @@
     dest: "{{ atom.install.dest }}"
     copy: no
   when: atom_binary|failed
+  tags:
+    - atom

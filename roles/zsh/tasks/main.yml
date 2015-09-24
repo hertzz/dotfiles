@@ -1,4 +1,9 @@
 ---
 
 - include: frameworks.yml
+  tags:
+    - zsh
+
 - include: config.yml
+  tags:
+    - zsh

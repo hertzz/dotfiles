@@ -1,17 +1,25 @@
 ---
 
 - include_vars: packages.yml
+  tags:
+    - atom
 
 - name: register apm binary
   stat: "path=apm"
   register: apm_binary
+  tags:
+    - atom
 
 - name: register package states
   stat: "path=~/.atom/packages/{{ item }}"
   register: "atom_package_stat"
   with_items: atom.packages
+  tags:
+    - atom
 
 - name: install Atom packages
   command: "apm install {{ item.item }}"
   when: apm_binary|success and item.stat.exists == False
   with_items: atom_package_stat.results
+  tags:
+    - atom

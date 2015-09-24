@@ -1,3 +1,5 @@
 ---
 
 - include: oh-my-zsh.yml
+  tags:
+    - zsh

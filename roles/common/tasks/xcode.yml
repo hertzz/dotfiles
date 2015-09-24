@@ -4,7 +4,11 @@
   command: "xcode-select -p"
   register: xcode_cli_state
   ignore_errors: True
+  tags:
+    - common
 
 - name: ensure Apple command line tools are installed
   command: "xcode-select --install"
   when: xcode_cli_state|failed
+  tags:
+    - common
