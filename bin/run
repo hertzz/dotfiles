@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+#
+# osx-soe-playbook
+# https://github.com/hertzz/osx-soe-playbook
+#
+
+BASE_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )/.."
+MASTER_PLAYBOOK="osx"
+
+if ! which ansible-playbook &>/dev/null; then
+  echo "Failed to locate 'ansible-playbook' utility." && exit 1
+fi
+
+if [ ! -z $1 ]; then
+  MASTER_PLAYBOOK="${BASE_DIR}/${1}.yml"
+  if [ ! -f $MASTER_PLAYBOOK ]; then
+    echo "Failed to locate '$(basename $MASTER_PLAYBOOK)' playbook." && exit 1
+  fi
+else
+  MASTER_PLAYBOOK="${BASE_DIR}/${MASTER_PLAYBOOK}.yml"
+fi
+
+ansible-playbook $MASTER_PLAYBOOK
+
+echo "Done."
+exit 0
