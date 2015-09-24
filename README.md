@@ -14,18 +14,14 @@ $ sudo mkdir -p /etc/ansible
 $ sudo echo "127.0.0.1" > /etc/ansible/hosts
 ```
 
-OR
-
-```shell
-$ sudo bash <(curl https://raw.githubusercontent.com/hertzz/osx-soe-playbook/master/bin/install -L)
-```
-
 ### Usage
 
-Run the `ansible-playbook` command:
+Run the playbook:
 ```shell
-$ sudo ansible-playbook osx-soe-playbook/osx.yml
+$ ./bin/run [playbook]
 ```
+
+If no first argument is specified, the `osx.yml` master playbook will be used.
 
 ### Contributors
 See [CONTRIBUTORS.md](CONTRIBUTORS.md) for more info.
