@@ -1,0 +1,40 @@
+---
+
+common:
+  settings:
+    safari:
+      class: 'com.apple.Safari'
+      properties:
+        UniversalSearchEnabled:
+          type: bool
+          value: false
+        SuppressSearchSuggestions:
+          type: bool
+          value: true
+        WebKitTabToLinksPreferenceKey:
+          type: bool
+          value: true
+        com.apple.Safari.ContentPageGroupIdentifier.WebKit2TabsToLinks:
+          type: bool
+          value: true
+        ShowFullURLInSmartSearchField:
+          type: bool
+          value: true
+        HomePage:
+          type: string
+          value: 'about:blank'
+        AutoOpenSafeDownloads:
+          type: bool
+          value: false
+        com.apple.Safari.ContentPageGroupIdentifier.WebKit2BackspaceKeyNavigationEnabled:
+          type: bool
+          value: true
+        ShowFavoritesBar:
+          type: bool
+          value: false
+        ShowSidebarInTopSites:
+          type: bool
+          value: false
+        IncludeInternalDebugMenu:
+          type: bool
+          value: true

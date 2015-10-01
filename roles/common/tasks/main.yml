@@ -3,3 +3,7 @@
 - include: xcode.yml
   tags:
     - common
+
+- include: settings.yml
+  tags:
+    - common

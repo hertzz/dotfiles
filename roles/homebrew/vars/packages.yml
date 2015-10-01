@@ -9,6 +9,7 @@ homebrew:
     - rbenv
     - ruby-build
     - youtube-dl
+    - node
     - ffmpeg
     - wget
     - zsh
