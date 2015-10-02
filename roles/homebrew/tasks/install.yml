@@ -4,14 +4,13 @@
   tags:
     - homebrew
 
-- name: ensure homebrew install path exists
-  file:
-    path: "{{ homebrew.install.path }}"
-    group: admin
-    mode: 0775
-    state: directory
-  tags:
-    - homebrew
+- name: register homebrew install path
+  stat: "path={{ homebrew.install.path }}"
+  register: homebrew_install_path
+  ignore_errors: False
+
+- fail: msg="Homebrew install path ({{ homebrew.install.path }}) does not exist!"
+  when: homebrew_install_path.stat.exists == False
 
 - name: ensure homebrew bin permissions are set
   file:
@@ -36,28 +35,6 @@
     dest: "{{ homebrew.install.path }}"
     update: no
     accept_hostkey: yes
-  when: homebrew_binary|failed
-  tags:
-    - homebrew
-
-- name: ensure homebrew git history is removed
-  file:
-    path: "{{ homebrew.install.path }}/.git"
-    state: absent
-  tags:
-    - homebrew
-
-- name: ensure homebrew markdown files are removed
-  file:
-    path: "{{ item }}"
-    state: absent
-  with_fileglob:
-    - "{{ homebrew.install.path }}/*.md"
-  tags:
-    - homebrew
-
-- name: register homebrew binary
-  stat: "path={{ homebrew.install.path }}/bin/brew"
-  register: homebrew_binary
+  when: homebrew_binary.stat.exists == False
   tags:
     - homebrew
