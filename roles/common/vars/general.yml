@@ -5,30 +5,11 @@ common:
     general:
       class: com.apple.universalaccess
       properties:
-        reduceTransparency:
-          comment: 'Enable transparency in menubars, window frames and form elements'
-          type: bool
-          value: false
-        AppleHighlightColor:
-          class: NSGlobalDomain
-          comment: 'Set highlight color to green'
-          type: string
-          value: 'green'
-        NSTableViewDefaultSizeMode:
-          class: NSGlobalDomain
-          comment: 'Set sidebar icon size to medium'
-          type: int
-          value: 2
         AppleShowScrollBars:
           class: NSGlobalDomain
           comment: 'Always show scrollbars'
           type: string
           value: 'Always'
-        NSWindowResizeTime:
-          class: NSGlobalDomain
-          comment: 'Increase window resize speed for Cocoa applications'
-          type: float
-          value: 0.001
         NSNavPanelExpandedStateForSaveMode:
           class: NSGlobalDomain
           comment: 'Expand save panel by default'
@@ -74,26 +55,6 @@ common:
           comment: 'Set key repeat rate'
           type: int
           value: 2
-        AppleLanguages:
-          class: NSGlobalDomain
-          comment: 'Set languages'
-          type: string
-          value: 'en'
-        AppleLocale:
-          class: NSGlobalDomain
-          comment: 'Set currency'
-          type: string
-          value: 'en_AU@currency=AUD'
-        AppleMeasurementUnits:
-          class: NSGlobalDomain
-          comment: 'Set measurement units'
-          type: string
-          value: 'Centimeters'
-        AppleMetricUnits:
-          class: NSGlobalDomain
-          comment: 'Set units to metric'
-          type: bool
-          value: true
         NSAutomaticSpellingCorrectionEnabled:
           class: NSGlobalDomain
           comment: 'Disable auto-correction'
@@ -119,16 +80,6 @@ common:
           comment: 'Save grab captures as PNG'
           type: string
           value: 'png'
-        disable-shadow:
-          class: com.apple.screencapture
-          comment: 'Disable shadows in grab captures'
-          type: bool
-          value: true
-        DisableAllAnimations:
-          class: com.apple.finder
-          comment: 'Enable all animations'
-          type: bool
-          value: false
         ShowExternalHardDrivesOnDesktop:
           class: com.apple.finder
           comment: 'Show external media drives on desktop'
@@ -184,16 +135,6 @@ common:
           comment: 'Disable warning when changing file extension'
           type: bool
           value: false
-        com.apple.springing.enabled:
-          class: NSGlobalDomain
-          comment: 'Enable spring loading for directories'
-          type: bool
-          value: true
-        com.apple.springing.delay:
-          class: NSGlobalDomain
-          comment: 'Remove the spring loading delay for directories'
-          type: float
-          value: 0
         DSDontWriteNetworkStores:
           class: com.apple.desktopservices
           comment: 'Avoid creating .DS_Store files on network volumes'
@@ -219,11 +160,6 @@ common:
           comment: 'Set the icon size of dock items to 36 pixels'
           type: int
           value: 36
-        mineffect:
-          class: com.apple.dock
-          comment: 'Set minimize/maximize window effect to scale'
-          type: string
-          value: 'scale'
         minimize-to-application:
           class: com.apple.dock
           comment: 'Minimize applications to their dock icon'
@@ -244,23 +180,3 @@ common:
           comment: 'Dont group windows by application in mission control'
           type: bool
           value: false
-        mcx-disabled:
-          class: com.apple.dashboard
-          comment: 'Disable the dashboard'
-          type: bool
-          value: true
-        dashboard-in-overlay:
-          class: com.apple.dock
-          comment: 'Dont show dashboard as space'
-          type: bool
-          value: true
-        mru-spaces:
-          class: com.apple.dock
-          comment: 'Dont rearrange spaces based on most frequently used'
-          type: bool
-          value: false
-        showhidden:
-          class: com.apple.dock
-          comment: 'Make hidden dock application icons translucent'
-          type: bool
-          value: true
