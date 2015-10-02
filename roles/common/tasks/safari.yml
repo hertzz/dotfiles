@@ -4,8 +4,8 @@
   tags:
     - common
 
-- name: ensure osx defaults are configured
-  command: "defaults write {{ common.settings.safari.class }} {{ item.key }} -{{ item.value.type }} {{ item.value.value }}"
+- name: ensure osx safari defaults are configured
+  command: "defaults write {{ item.value.class | default(common.settings.safari.class) }} {{ item.key }} -{{ item.value.type }} {{ item.value.value }}"
   with_dict: "{{ common.settings.safari.properties }}"
   tags:
     - common
