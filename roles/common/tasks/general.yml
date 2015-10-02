@@ -1,0 +1,11 @@
+---
+
+- include_vars: general.yml
+  tags:
+    - common
+
+- name: ensure osx general defaults are configured
+  command: "defaults write {{ item.value.class | default(common.settings.general.class) }} {{ item.key }} -{{ item.value.type }} {{ item.value.value }}"
+  with_dict: "{{ common.settings.general.properties }}"
+  tags:
+    - common

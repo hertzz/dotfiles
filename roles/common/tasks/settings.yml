@@ -1,5 +1,9 @@
 ---
 
+- include: general.yml
+  tags:
+    - common
+
 - include: safari.yml
   tags:
     - common

@@ -1,0 +1,266 @@
+---
+
+common:
+  settings:
+    general:
+      class: com.apple.universalaccess
+      properties:
+        reduceTransparency:
+          comment: 'Enable transparency in menubars, window frames and form elements'
+          type: bool
+          value: false
+        AppleHighlightColor:
+          class: NSGlobalDomain
+          comment: 'Set highlight color to green'
+          type: string
+          value: 'green'
+        NSTableViewDefaultSizeMode:
+          class: NSGlobalDomain
+          comment: 'Set sidebar icon size to medium'
+          type: int
+          value: 2
+        AppleShowScrollBars:
+          class: NSGlobalDomain
+          comment: 'Always show scrollbars'
+          type: string
+          value: 'Always'
+        NSWindowResizeTime:
+          class: NSGlobalDomain
+          comment: 'Increase window resize speed for Cocoa applications'
+          type: float
+          value: 0.001
+        NSNavPanelExpandedStateForSaveMode:
+          class: NSGlobalDomain
+          comment: 'Expand save panel by default'
+          type: bool
+          value: true
+        NSNavPanelExpandedStateForSaveMode2:
+          class: NSGlobalDomain
+          comment: 'Expand save panel by default'
+          type: bool
+          value: true
+        com.apple.print.PrintingPrefs:
+          class:
+          comment: 'Automatically quit printer app once the print jobs complete'
+          type: bool
+          value: true
+        ScheduleFrequency:
+          class: com.apple.SoftwareUpdate
+          comment: 'Check for software updates daily, not just once per week'
+          type: int
+          value: 1
+        NSAutomaticQuoteSubstitutionEnabled:
+          class: NSGlobalDomain
+          comment: 'Disable smart quotes because they suck for coding'
+          type: bool
+          value: false
+        NSAutomaticDashSubstitutionEnabled:
+          class: NSGlobalDomain
+          comment: 'Disable smart dashes because they suck for coding'
+          type: bool
+          value: false
+        AppleKeyboardUIMode:
+          class: NSGlobalDomain
+          comment: 'Enable full keyboard access for all controls'
+          type: int
+          value: 3
+        ApplePressAndHoldEnabled:
+          class: NSGlobalDomain
+          comment: 'Enable press-and-hold for keys instead of key repeat'
+          type: bool
+          value: true
+        KeyRepeat:
+          class: NSGlobalDomain
+          comment: 'Set key repeat rate'
+          type: int
+          value: 2
+        AppleLanguages:
+          class: NSGlobalDomain
+          comment: 'Set languages'
+          type: string
+          value: 'en'
+        AppleLocale:
+          class: NSGlobalDomain
+          comment: 'Set currency'
+          type: string
+          value: 'en_AU@currency=AUD'
+        AppleMeasurementUnits:
+          class: NSGlobalDomain
+          comment: 'Set measurement units'
+          type: string
+          value: 'Centimeters'
+        AppleMetricUnits:
+          class: NSGlobalDomain
+          comment: 'Set units to metric'
+          type: bool
+          value: true
+        NSAutomaticSpellingCorrectionEnabled:
+          class: NSGlobalDomain
+          comment: 'Disable auto-correction'
+          type: bool
+          value: false
+        askForPassword:
+          class: com.apple.screensaver
+          comment: 'Require password after screensaver'
+          type: int
+          value: 1
+        askForPasswordDelay:
+          class: com.apple.screensaver
+          comment: 'Instantly require password after screensaver'
+          type: int
+          value: 1
+        location:
+          class: com.apple.screencapture
+          comment: 'Save grab captures to desktop'
+          type: string
+          value: '${HOME}/Desktop'
+        type:
+          class: com.apple.screencapture
+          comment: 'Save grab captures as PNG'
+          type: string
+          value: 'png'
+        disable-shadow:
+          class: com.apple.screencapture
+          comment: 'Disable shadows in grab captures'
+          type: bool
+          value: true
+        DisableAllAnimations:
+          class: com.apple.finder
+          comment: 'Enable all animations'
+          type: bool
+          value: false
+        ShowExternalHardDrivesOnDesktop:
+          class: com.apple.finder
+          comment: 'Show external media drives on desktop'
+          type: bool
+          value: true
+        ShowHardDrivesOnDesktop:
+          class: com.apple.finder
+          comment: 'Show local media drives on desktop'
+          type: bool
+          value: true
+        ShowMountedServersOnDesktop:
+          class: com.apple.finder
+          comment: 'Show remote server connections on desktop'
+          type: bool
+          value: true
+        ShowRemovableMediaOnDesktop:
+          class: com.apple.finder
+          comment: 'Show removable media on desktop'
+          type: bool
+          value: true
+        AppleShowAllExtensions:
+          class: NSGlobalDomain
+          comment: 'Show all filename extensions'
+          type: bool
+          value: true
+        ShowStatusBar:
+          class: com.apple.finder
+          comment: 'Show status bar in windows'
+          type: bool
+          value: true
+        ShowPathbar:
+          class: com.apple.finder
+          comment: 'Show path bar in windows'
+          type: bool
+          value: true
+        QLEnableTextSelection:
+          class: com.apple.finder
+          comment: 'Allow text selection in quick look modal windows'
+          type: bool
+          value: true
+        _FXShowPosixPathInTitle:
+          class: com.apple.finder
+          comment: 'Show full POSIX path as finder window title'
+          type: bool
+          value: true
+        FXDefaultSearchScope:
+          class: com.apple.finder
+          comment: 'Search current folder by default'
+          type: string
+          value: 'SCcf'
+        FXEnableExtensionChangeWarning:
+          class: com.apple.finder
+          comment: 'Disable warning when changing file extension'
+          type: bool
+          value: false
+        com.apple.springing.enabled:
+          class: NSGlobalDomain
+          comment: 'Enable spring loading for directories'
+          type: bool
+          value: true
+        com.apple.springing.delay:
+          class: NSGlobalDomain
+          comment: 'Remove the spring loading delay for directories'
+          type: float
+          value: 0
+        DSDontWriteNetworkStores:
+          class: com.apple.desktopservices
+          comment: 'Avoid creating .DS_Store files on network volumes'
+          type: bool
+          value: true
+        FXPreferredViewStyle:
+          class: com.apple.finder
+          comment: 'Use list view by default in finder windows'
+          type: string
+          value: 'Nlsv'
+        WarnOnEmptyTrash:
+          class: com.apple.finder
+          comment: 'Disable empty trash warning'
+          type: bool
+          value: false
+        EmptyTrashSecurely:
+          class: com.apple.finder
+          comment: 'Always empty trash securely'
+          type: bool
+          value: true
+        tilesize:
+          class: com.apple.dock
+          comment: 'Set the icon size of dock items to 36 pixels'
+          type: int
+          value: 36
+        mineffect:
+          class: com.apple.dock
+          comment: 'Set minimize/maximize window effect to scale'
+          type: string
+          value: 'scale'
+        minimize-to-application:
+          class: com.apple.dock
+          comment: 'Minimize applications to their dock icon'
+          type: bool
+          value: true
+        show-process-indicators:
+          class: com.apple.dock
+          comment: 'Show indicator lights for open dock applications'
+          type: bool
+          value: true
+        expose-animation-duration:
+          class: com.apple.dock
+          comment: 'Speed up mission control animations'
+          type: float
+          value: 0.1
+        expose-group-by-app:
+          class: com.apple.dock
+          comment: 'Dont group windows by application in mission control'
+          type: bool
+          value: false
+        mcx-disabled:
+          class: com.apple.dashboard
+          comment: 'Disable the dashboard'
+          type: bool
+          value: true
+        dashboard-in-overlay:
+          class: com.apple.dock
+          comment: 'Dont show dashboard as space'
+          type: bool
+          value: true
+        mru-spaces:
+          class: com.apple.dock
+          comment: 'Dont rearrange spaces based on most frequently used'
+          type: bool
+          value: false
+        showhidden:
+          class: com.apple.dock
+          comment: 'Make hidden dock application icons translucent'
+          type: bool
+          value: true
