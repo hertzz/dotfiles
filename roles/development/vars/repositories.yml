@@ -1,0 +1,6 @@
+---
+
+development:
+  repositories:
+    - dotfiles: git@github.com:hertzz/dotfiles.git
+      directory: hertzz/dotfiles
