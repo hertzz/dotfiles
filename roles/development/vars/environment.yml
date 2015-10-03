@@ -2,4 +2,4 @@
 
 development:
   environment:
-    home_dir: ~/Development
+    base_dir: ~/Development

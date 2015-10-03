@@ -1,0 +1,19 @@
+---
+
+- include_vars: environment.yml
+  tags:
+    - development
+
+- include_vars: github.yml
+  tags:
+    - development
+
+- name: ensure github repositories are cloned
+  git:
+    repo: "git://github.com/{{ item }}.git"
+    dest: "{{ development.environment.base_dir }}/{{ item }}"
+    clone: yes
+    update: yes
+  with_items: "{{ development.repositories.github }}"
+  tags:
+    - development

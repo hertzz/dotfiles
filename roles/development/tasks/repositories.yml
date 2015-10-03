@@ -1,5 +1,5 @@
 ---
 
-- include_vars: repositories.yml
+- include: github.yml
   tags:
     - development
