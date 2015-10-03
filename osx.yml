@@ -7,6 +7,7 @@
     - common
     - homebrew
     - git
+    - development
     - vim
     - atom
     - zsh
