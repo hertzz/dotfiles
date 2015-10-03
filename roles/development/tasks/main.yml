@@ -1,0 +1,9 @@
+---
+
+- include: env.yml
+  tags:
+    - development
+
+- include: repositories.yml
+  tags:
+    - development
