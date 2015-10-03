@@ -6,35 +6,46 @@ common:
       class: 'com.apple.Safari'
       properties:
         UniversalSearchEnabled:
+          comment: 'Send search queries to Apple'
           type: bool
           value: false
         SuppressSearchSuggestions:
+          comment: 'Send search queries to Apple'
           type: bool
           value: true
         WebKitTabToLinksPreferenceKey:
+          comment: 'Press tab to cycle through web elements'
           type: bool
           value: true
         com.apple.Safari.ContentPageGroupIdentifier.WebKit2TabsToLinks:
+          comment: 'Press tab to cycle through web elements'
           type: bool
           value: true
         ShowFullURLInSmartSearchField:
+          comment: 'Show full URL in address bar (non truncated)'
           type: bool
           value: true
         HomePage:
+          comment: 'Default starting page'
           type: string
           value: 'about:blank'
         AutoOpenSafeDownloads:
+          comment: 'Automatically open filetypes defined as safe'
           type: bool
           value: false
         com.apple.Safari.ContentPageGroupIdentifier.WebKit2BackspaceKeyNavigationEnabled:
+          comment: 'Goto previous page when pressing delete key'
           type: bool
           value: true
         ShowFavoritesBar:
+          comment: 'Display the favourites side pane'
           type: bool
           value: false
         ShowSidebarInTopSites:
+          comment: 'Show sidebar on most actively visited sites'
           type: bool
           value: false
         IncludeInternalDebugMenu:
+          comment: 'Show the developer debug menu'
           type: bool
           value: true
