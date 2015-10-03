@@ -11,16 +11,28 @@ $ sudo easy_install pip
 $ sudo pip install ansible --user $USER
 ```
 
+Clone repository:
+```shell
+$ git clone git@github.com:hertzz/dotfiles.git ~/dotfiles
+```
+
+Create link to helper script:
+```shell
+$ mkdir -p /usr/local/bin
+$ ln -s ~/dotfiles/bin/run /usr/local/bin/dotfiles
+$ chmod +x /usr/local/bin/dotfiles
+```
+
 ### Usage
 
 Run the playbook:
 ```shell
-$ ./bin/run [ROLE]
+$ dotfiles [ROLE]
 ```
 
 Run a specific playbook role:
 ```shell
-$ ./bin/run homebrew
+$ dotfiles homebrew
 ```
 
 ### Roles
