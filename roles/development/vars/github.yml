@@ -1,6 +1,5 @@
 ---
 
-development:
-  repositories:
-    github:
-      - hertzz/dotfiles
+repositories:
+  github:
+    - hertzz/dotfiles

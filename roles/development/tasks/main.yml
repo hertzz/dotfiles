@@ -1,6 +1,6 @@
 ---
 
-- include: environment.yml
+- include: env.yml
   tags:
     - development
 

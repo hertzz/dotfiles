@@ -1,6 +1,6 @@
 ---
 
-- include_vars: environment.yml
+- include_vars: env.yml
   tags:
     - development
 
@@ -11,9 +11,9 @@
 - name: ensure github repositories are cloned
   git:
     repo: "git://github.com/{{ item }}.git"
-    dest: "{{ development.environment.base_dir }}/{{ item }}"
+    dest: "{{ env.base_dir }}/{{ item }}"
     clone: yes
-    update: yes
-  with_items: "{{ development.repositories.github }}"
+    update: no
+  with_items: "{{ repositories.github }}"
   tags:
     - development
