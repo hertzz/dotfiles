@@ -5,27 +5,24 @@
 #
 
 BASE_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )/.."
+
 MASTER_PLAYBOOK="osx"
+ROLE_PLAYBOOK="run_role"
 MASTER_ROLE="all"
 
 if ! which ansible-playbook &>/dev/null; then
   echo "Failed to locate 'ansible-playbook' utility." && exit 1
 fi
 
-if [[ ! -z $1 && ! -z $2 ]]; then
-  MASTER_PLAYBOOK="${BASE_DIR}/run_role.yml"
-elif [ ! -z $1 ]; then
-  MASTER_PLAYBOOK="${BASE_DIR}/${1}.yml"
+if [[ ! -z $1 ]]; then
+  MASTER_PLAYBOOK="${BASE_DIR}/${ROLE_PLAYBOOK}.yml"
+  MASTER_ROLE="${BASE_DIR}/roles/${1}"
 else
   MASTER_PLAYBOOK="${BASE_DIR}/${MASTER_PLAYBOOK}.yml"
 fi
 
 if [ ! -f $MASTER_PLAYBOOK ]; then
   echo "Failed to locate '$(basename $MASTER_PLAYBOOK)' playbook." && exit 1
-fi
-
-if [ ! -z $2 ]; then
-  MASTER_ROLE="${BASE_DIR}/roles/${2}"
 fi
 
 if [[ $MASTER_ROLE != "all" && ! -d $MASTER_ROLE ]]; then
