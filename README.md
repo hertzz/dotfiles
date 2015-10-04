@@ -43,6 +43,9 @@ $ dotfiles homebrew
     * Provides management of OS X defaults
     * Provides management of Safari defaults
     * Installs XCode/XCode CLI utils
+* development
+    * Provides management of development workspace
+    * Clones repository list to local workspace
 * git
     * Provides management of Git CLI properties (global .gitignore, .gitconfig etc...)
 * homebrew

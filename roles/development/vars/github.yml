@@ -1,5 +1,7 @@
 ---
 
-repositories:
-  github:
-    - hertzz/dotfiles
+github:
+  repositories:
+    dotfiles:
+      repo: hertzz/dotfiles
+      latest: no

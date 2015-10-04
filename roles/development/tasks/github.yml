@@ -10,10 +10,10 @@
 
 - name: ensure github repositories are cloned
   git:
-    repo: "git://github.com/{{ item }}.git"
-    dest: "{{ env.base_dir }}/{{ item }}"
-    clone: yes
-    update: no
-  with_items: "{{ repositories.github }}"
+    repo: "git://github.com/{{ item.value.repo }}.git"
+    dest: "{{ env.base_dir }}/{{ item.value.dest | default (item.value.repo) }}"
+    clone: "{{ item.value.clone | default ('yes') }}"
+    update: "{{ item.value.latest | default ('no') }}"
+  with_dict: "{{ github.repositories }}"
   tags:
     - development
