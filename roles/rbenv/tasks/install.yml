@@ -1,0 +1,19 @@
+---
+
+- include_vars: ruby.yml
+  tags:
+    - rbenv
+
+- name: register rbenv binary state
+  command: "which rbenv"
+  register: rbenv_binary_state
+  ignore_errors: true
+  tags:
+    - rbenv
+
+- name: fail if rbenv not installed
+  fail:
+    msg: "rbenv is not installed"
+  when: rbenv_binary_state|failed
+  tags:
+    - rbenv
