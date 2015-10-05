@@ -6,7 +6,7 @@
 
 - name: register rbenv binary state
   command: "which rbenv"
-  register: rbenv_binary_state
+  register: rbenv_binary
   ignore_errors: true
   tags:
     - rbenv
@@ -14,6 +14,20 @@
 - name: fail if rbenv not installed
   fail:
     msg: "rbenv is not installed"
-  when: rbenv_binary_state|failed
+  when: rbenv_binary|failed
+  tags:
+    - rbenv
+
+- debug: "msg={{ rbenv_binary }}"
+
+- name: register current ruby version
+  command: "{{ rbenv_binary }} version | cut -f1 -d' '"
+  register: global_ruby_version
+  tags:
+    - rbenv
+
+- name: ensure appropriate ruby version is installed
+  command: "{{ rbenv_binary }} install {{ ruby.version }}"
+  when: "{{ global_ruby_version }} != {{ ruby.version }}"
   tags:
     - rbenv
