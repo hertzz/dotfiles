@@ -18,16 +18,14 @@
   tags:
     - rbenv
 
-- debug: "msg={{ rbenv_binary }}"
-
 - name: register current ruby version
-  command: "{{ rbenv_binary }} version | cut -f1 -d' '"
+  command: "rbenv version"
   register: global_ruby_version
   tags:
     - rbenv
 
 - name: ensure appropriate ruby version is installed
-  command: "{{ rbenv_binary }} install {{ ruby.version }}"
-  when: "{{ global_ruby_version }} != {{ ruby.version }}"
+  command: "rbenv install {{ ruby.version }}"
+  when: global_ruby_version.stdout.split(' ')[0] != ruby.version
   tags:
     - rbenv
