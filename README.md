@@ -52,6 +52,8 @@ $ dotfiles homebrew
     * Provides management of Homebrew environment setup
     * Provides management of Homebrew packages & taps
     * Package specific updates/upgrades and internal brew updates
+* rbenv
+    * Installs a specific ruby version (default 2.2.3)
 * vim
     * Provides management of global VI configuration (.vim)
     * Provides management of VI colors and syntax plugins/themes

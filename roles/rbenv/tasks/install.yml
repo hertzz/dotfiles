@@ -1,0 +1,31 @@
+---
+
+- include_vars: ruby.yml
+  tags:
+    - rbenv
+
+- name: register rbenv binary state
+  command: "which rbenv"
+  register: rbenv_binary
+  ignore_errors: true
+  tags:
+    - rbenv
+
+- name: fail if rbenv not installed
+  fail:
+    msg: "rbenv is not installed"
+  when: rbenv_binary|failed
+  tags:
+    - rbenv
+
+- name: register current ruby version
+  command: "rbenv version"
+  register: global_ruby_version
+  tags:
+    - rbenv
+
+- name: ensure appropriate ruby version is installed
+  command: "rbenv install {{ ruby.version }}"
+  when: global_ruby_version.stdout.split(' ')[0] != ruby.version
+  tags:
+    - rbenv
