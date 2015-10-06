@@ -1,0 +1,15 @@
+---
+
+- include_vars: packages.yml
+  tags:
+    - npm
+
+- name: ensure npm packages are installed
+  npm:
+    name: "{{ item.package }}"
+    version: "{{ item.version | default ('') }}"
+    global: true
+    state: "{{ item.state | default ('present') }}"
+  with_items: "{{ npm.packages }}"
+  tags:
+    - npm
