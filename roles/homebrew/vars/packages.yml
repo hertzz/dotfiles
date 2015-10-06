@@ -12,4 +12,5 @@ homebrew:
     - node
     - ffmpeg
     - wget
+    - mongodb
     - zsh

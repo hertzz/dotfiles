@@ -1,0 +1,6 @@
+---
+
+npm:
+  packages:
+    - package: sails
+      version: latest
