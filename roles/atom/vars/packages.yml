@@ -2,6 +2,15 @@
 
 atom:
   packages:
+    - linter
     - atom-jinja2
     - minimap
     - meteor-api
+    - markdown-preview
+    - editor-stats
+    - autocomplete-plus
+    - linter-jshint
+    - atom-beautify
+    - atom-ternjs
+    - gulp-control
+    - grunt-runner
